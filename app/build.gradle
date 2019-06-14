@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+	compileSdkVersion 28
+	defaultConfig {
+		applicationId "com.patryk.springer.shoppinglist"
+		minSdkVersion rootProject.ext.minSdkVersion
+		targetSdkVersion rootProject.ext.targetSdkVersion
+		versionCode rootProject.ext.versionCode
+		versionName rootProject.ext.versionName
+		testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+	}
+	buildTypes {
+		release {
+			minifyEnabled false
+			proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+		}
+	}
+}
+
+dependencies {
+	implementation fileTree(dir: 'libs', include: ['*.jar'])
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+	implementation "androidx.appcompat:appcompat:$android_support_appcompat_version"
+	implementation "com.google.android.material:material:$android_support_material_version"
+	implementation "androidx.cardview:cardview:$android_support_cardview_version"
+
+	kapt "com.google.dagger:dagger-compiler:$dagger_version"
+	implementation "com.google.dagger:dagger:$dagger_version"
+	implementation "com.google.dagger:dagger-android:$dagger_version"
+	implementation "com.google.dagger:dagger-android-support:$dagger_version"
+	kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+
+	implementation "android.arch.persistence.room:runtime:$room_version"
+	kapt "android.arch.persistence.room:compiler:$room_version"
+	implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+	implementation 'androidx.core:core-ktx:1.0.2'
+	implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+	testImplementation "junit:junit:$junit_version"
+	androidTestImplementation "androidx.test:runner:$test_runner_version"
+	androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"
+}
