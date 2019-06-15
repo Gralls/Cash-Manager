@@ -1,4 +1,4 @@
-package com.patryk.springer.shoppinglist.view.activelists
+package com.patryk.springer.shoppinglist.view.shoppinglists.activelists
 
 import com.patryk.springer.shoppinglist.di.scopes.FragmentScope
 import dagger.Binds

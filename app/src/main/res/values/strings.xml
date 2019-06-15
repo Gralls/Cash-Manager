@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Shopping List</string>
+    <string name="create_new_list_title">Create new list</string>
+    <string name="confirm_create_new_list">Create</string>
+    <string name="cancel_create_new_list">Cancel</string>
+    <string name="products_count_delimiter">/</string>
 </resources>

@@ -3,10 +3,10 @@ package com.patryk.springer.shoppinglist.view.main
 import android.os.Bundle
 import android.view.View
 import com.patryk.springer.shoppinglist.R
-import com.patryk.springer.shoppinglist.view.activelists.ActiveListsFragment
-import com.patryk.springer.shoppinglist.view.archievedlists.ArchivedListsFragment
 import com.patryk.springer.shoppinglist.view.base.BaseFragmentWithViewPager
 import com.patryk.springer.shoppinglist.view.base.BaseViewPagerFragment
+import com.patryk.springer.shoppinglist.view.shoppinglists.activelists.ActiveListsFragment
+import com.patryk.springer.shoppinglist.view.shoppinglists.archievedlists.ArchivedListsFragment
 import javax.inject.Inject
 
 /**
