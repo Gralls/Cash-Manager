@@ -1,79 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
-	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
-	android:layout_width="match_parent"
-	android:layout_height="wrap_content"
-	android:layout_marginStart="16dp"
-	android:layout_marginEnd="16dp"
-	android:foreground="?attr/selectableItemBackgroundBorderless"
-	app:cardCornerRadius="8dp"
-	app:cardElevation="4dp"
-	app:cardUseCompatPadding="true"
-	>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
 
-	<androidx.constraintlayout.widget.ConstraintLayout
-		android:layout_width="match_parent"
-		android:layout_height="match_parent"
-		android:padding="16dp"
-		>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
 
-		<TextView
-			android:id="@+id/tv_row_shopping_list_name"
-			style="@style/ListRowHeader"
-			android:layout_width="0dp"
-			android:layout_height="wrap_content"
-			android:layout_marginEnd="8dp"
-			app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_unchecked_prod"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toTopOf="parent"
-			tools:text="Shopping List Name"
-			/>
+        <TextView
+            android:id="@+id/tv_row_shopping_list_name"
+            style="@style/ListRowHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_unchecked_prod"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Shopping List Name" />
 
-		<TextView
-			android:id="@+id/tv_row_shopping_list_unchecked_prod"
-			style="@style/ListRowQuantity"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"
-			app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_prod_delim"
-			app:layout_constraintTop_toTopOf="@id/tv_row_shopping_list_prod_delim"
-			tools:text="20"
-			/>
+        <TextView
+            android:id="@+id/tv_row_shopping_list_unchecked_prod"
+            style="@style/ListRowQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"
+            app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_prod_delim"
+            app:layout_constraintTop_toTopOf="@id/tv_row_shopping_list_prod_delim"
+            tools:text="20" />
 
-		<TextView
-			android:id="@+id/tv_row_shopping_list_prod_delim"
-			style="@style/ListRowQuantity"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="@string/products_count_delimiter"
-			app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_total_prod"
-			app:layout_constraintTop_toTopOf="parent"
-			/>
+        <TextView
+            android:id="@+id/tv_row_shopping_list_prod_delim"
+            style="@style/ListRowQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/products_count_delimiter"
+            app:layout_constraintEnd_toStartOf="@id/tv_row_shopping_list_total_prod"
+            app:layout_constraintTop_toTopOf="parent" />
 
-		<TextView
-			android:id="@+id/tv_row_shopping_list_total_prod"
-			style="@style/ListRowQuantity"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toTopOf="@id/tv_row_shopping_list_prod_delim"
-			tools:text="49"
-			/>
+        <TextView
+            android:id="@+id/tv_row_shopping_list_total_prod"
+            style="@style/ListRowQuantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_row_shopping_list_prod_delim"
+            tools:text="49" />
 
-		<TextView
-			android:id="@+id/tv_row_shopping_list_created_date"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_marginTop="16dp"
-			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toStartOf="parent"
-			app:layout_constraintTop_toBottomOf="@id/tv_row_shopping_list_name"
-			tools:text="20.06.2019 14:23"
-			/>
-	</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_row_shopping_list_created_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_row_shopping_list_name"
+            tools:text="20.06.2019 14:23" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
 

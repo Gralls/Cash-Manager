@@ -14,40 +14,40 @@ import javax.inject.Inject
  * Created by Patryk Springer on 2019-06-13.
  */
 class ArchivedListsFragment : BaseListFragment<ArchivedListsContract.Presenter>(),
-		ArchivedListsContract.View {
+    ArchivedListsContract.View {
 
 
-	@Inject
-	override lateinit var mPresenter: ArchivedListsContract.Presenter
+    @Inject
+    override lateinit var mPresenter: ArchivedListsContract.Presenter
 
-	override val mFragmentTitle: Int
-		get() = R.string.title_archived_lists
+    override val mFragmentTitle: Int
+        get() = R.string.title_archived_lists
 
-	override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-		super.onViewCreated(view, savedInstanceState)
-		fab_active_shopping_list_create.hide()
-	}
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        fab_active_shopping_list_create.hide()
+    }
 
-	override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
-		return when (item?.itemId) {
-			R.id.menu_delete -> {
-				mPresenter.onShoppingListRemoved()
-				mode?.finish()
-				true
-			}
-			R.id.menu_unarchive -> {
-				mPresenter.onShoppingListUnarchived()
-				mode?.finish()
-				true
-			}
+    override fun onActionItemClicked(mode: ActionMode?, item: MenuItem?): Boolean {
+        return when (item?.itemId) {
+            R.id.menu_delete -> {
+                mPresenter.onShoppingListRemoved()
+                mode?.finish()
+                true
+            }
+            R.id.menu_unarchive -> {
+                mPresenter.onShoppingListUnarchived()
+                mode?.finish()
+                true
+            }
 
-			else -> false
-		}
-	}
+            else -> false
+        }
+    }
 
-	override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
-		val inflater = mode?.menuInflater
-		inflater?.inflate(R.menu.archived_list_menu, menu)
-		return true
-	}
+    override fun onCreateActionMode(mode: ActionMode?, menu: Menu?): Boolean {
+        val inflater = mode?.menuInflater
+        inflater?.inflate(R.menu.archived_list_menu, menu)
+        return true
+    }
 }

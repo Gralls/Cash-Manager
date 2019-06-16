@@ -10,12 +10,12 @@ import timber.log.Timber
  */
 class ShoppingListApplication : DaggerApplication() {
 
-	override fun onCreate() {
-		super.onCreate()
-		if (BuildConfig.DEBUG) {
-			Timber.plant(Timber.DebugTree())
-		}
-	}
+    override fun onCreate() {
+        super.onCreate()
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+    }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerApplicationComponent.builder().application(this).build()

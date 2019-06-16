@@ -9,10 +9,10 @@ import io.reactivex.Flowable
  */
 interface ShoppingListsRepo {
 
-	fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
-	fun createNewShoppingList(shoppingList: ShoppingList)
-	fun getShoppingListsWithProducts(isArchived: Boolean): Flowable<List<ShoppingListWithProducts>>
-	fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
-	fun removeShoppingList(listId: Int)
-	fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
+    fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
+    fun createNewShoppingList(shoppingList: ShoppingList)
+    fun getShoppingListsWithProducts(isArchived: Boolean): Flowable<List<ShoppingListWithProducts>>
+    fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
+    fun removeShoppingList(listId: Int)
+    fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
 }

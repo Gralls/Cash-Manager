@@ -15,18 +15,18 @@ import javax.inject.Singleton
 @Module
 class DatabaseModule {
 
-	@Provides
-	@Singleton
-	fun providesDatabase(context: Context): ShoppingListsDb {
-		return Room.databaseBuilder(context, ShoppingListsDb::class.java, "shopping-list.db")
-				.build()
-	}
+    @Provides
+    @Singleton
+    fun providesDatabase(context: Context): ShoppingListsDb {
+        return Room.databaseBuilder(context, ShoppingListsDb::class.java, "shopping-list.db")
+            .build()
+    }
 
-	@Provides
-	@Singleton
-	fun providesShoppingListDao(db: ShoppingListsDb): ShoppingListsDao = db.shoppingListsDao()
+    @Provides
+    @Singleton
+    fun providesShoppingListDao(db: ShoppingListsDb): ShoppingListsDao = db.shoppingListsDao()
 
-	@Provides
-	@Singleton
-	fun providesProductsDao(db: ShoppingListsDb): ProductDao = db.productsDao()
+    @Provides
+    @Singleton
+    fun providesProductsDao(db: ShoppingListsDb): ProductDao = db.productsDao()
 }

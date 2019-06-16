@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.row_checked_product.view.*
  * Created by Patryk Springer on 2019-06-16.
  */
 class ProductsListAdapter(private val mPresenter: ListDetailsContract.Presenter) :
-		RecyclerView.Adapter<ProductsListAdapter.ViewHolder>() {
+	RecyclerView.Adapter<ProductsListAdapter.ViewHolder>() {
 
 	override fun getItemViewType(position: Int): Int {
 		return mPresenter.getViewTypeOfProduct(position)?.viewType ?: -1
@@ -21,11 +21,11 @@ class ProductsListAdapter(private val mPresenter: ListDetailsContract.Presenter)
 		val view = when (ProductTypeEnum.getProductTypeByViewType(viewType)) {
 			ProductTypeEnum.CHECKED -> {
 				LayoutInflater.from(parent.context)
-						.inflate(R.layout.row_checked_product, parent, false)
+					.inflate(R.layout.row_checked_product, parent, false)
 			}
 			ProductTypeEnum.UNCHECKED -> {
 				LayoutInflater.from(parent.context)
-						.inflate(R.layout.row_unchecked_product, parent, false)
+					.inflate(R.layout.row_unchecked_product, parent, false)
 			}
 		}
 		val viewHolder = ViewHolder(view)
@@ -51,7 +51,7 @@ class ProductsListAdapter(private val mPresenter: ListDetailsContract.Presenter)
 	}
 
 	inner class ViewHolder(private val mItemView: View) : RecyclerView.ViewHolder(mItemView),
-			ListDetailsContract.RowView {
+		ListDetailsContract.RowView {
 
 		override fun setProductName(name: String) = with(mItemView) {
 			tv_row_product_name.text = name

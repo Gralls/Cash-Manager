@@ -16,29 +16,30 @@ import javax.inject.Singleton
 @Singleton
 class ShoppingListsDbRepo @Inject constructor(val mDao: ShoppingListsDao) : ShoppingListsRepo {
 
-	override fun getActiveShoppingLists(): Flowable<List<ShoppingList>> =
-		mDao.getActiveShoppingLists()
+    override fun getActiveShoppingLists(): Flowable<List<ShoppingList>> =
+        mDao.getActiveShoppingLists()
 
-	override fun getShoppingListsWithProducts(
-			isArchived: Boolean): Flowable<List<ShoppingListWithProducts>> {
-		return mDao.getShoppingListsWithProducts(isArchived)
-	}
+    override fun getShoppingListsWithProducts(
+        isArchived: Boolean
+    ): Flowable<List<ShoppingListWithProducts>> {
+        return mDao.getShoppingListsWithProducts(isArchived)
+    }
 
-	override fun createNewShoppingList(shoppingList: ShoppingList) {
-		Completable.fromAction { mDao.createNewShoppingList(shoppingList) }
-				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun createNewShoppingList(shoppingList: ShoppingList) {
+        Completable.fromAction { mDao.createNewShoppingList(shoppingList) }
+            .subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean) {
-		Completable.fromAction { mDao.setShoppingListArchivedStatus(listId, isArchived) }
-				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean) {
+        Completable.fromAction { mDao.setShoppingListArchivedStatus(listId, isArchived) }
+            .subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun removeShoppingList(listId: Int) {
-		Completable.fromAction { mDao.removeShoppingList(listId) }.subscribeOn(Schedulers.io())
-				.observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun removeShoppingList(listId: Int) {
+        Completable.fromAction { mDao.removeShoppingList(listId) }.subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts> =
-		mDao.getShoppingListDetails(listId)
+    override fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts> =
+        mDao.getShoppingListDetails(listId)
 }

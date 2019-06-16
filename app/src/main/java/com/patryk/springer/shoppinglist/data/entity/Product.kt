@@ -9,14 +9,15 @@ import androidx.room.PrimaryKey
  */
 @Entity
 data class Product(
-		@ColumnInfo(name = "name")
-		val mName: String,
-		@ColumnInfo(name = "shoppingListId")
-		val mShoppingListId: Int,
-		@ColumnInfo(name = "quantity")
-		val mQuantity: Int = 0,
-		@ColumnInfo(name = "isChecked")
-		val mIsChecked: Boolean = false,
-		@PrimaryKey(autoGenerate = true)
-		@ColumnInfo(name = "id")
-		val mId: Int = 0)
+    @ColumnInfo(name = "name")
+    val mName: String,
+    @ColumnInfo(name = "shoppingListId")
+    val mShoppingListId: Int,
+    @ColumnInfo(name = "quantity")
+    val mQuantity: Int = 0,
+    @ColumnInfo(name = "isChecked")
+    val mIsChecked: Boolean = false,
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "id")
+    val mId: Int = 0
+)

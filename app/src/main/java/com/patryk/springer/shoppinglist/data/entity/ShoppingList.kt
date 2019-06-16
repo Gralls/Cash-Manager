@@ -10,12 +10,13 @@ import java.util.*
  */
 @Entity
 data class ShoppingList(
-		@ColumnInfo(name = "name")
-		val mName: String,
-		@ColumnInfo(name = "isArchived")
-		val mIsArchived: Boolean = false,
-		@ColumnInfo(name = "date")
-		val mDate: Date? = Date(),
-		@ColumnInfo(name = "id")
-		@PrimaryKey(autoGenerate = true)
-		val mId: Int = 0)
+    @ColumnInfo(name = "name")
+    val mName: String,
+    @ColumnInfo(name = "isArchived")
+    val mIsArchived: Boolean = false,
+    @ColumnInfo(name = "date")
+    val mDate: Date? = Date(),
+    @ColumnInfo(name = "id")
+    @PrimaryKey(autoGenerate = true)
+    val mId: Int = 0
+)

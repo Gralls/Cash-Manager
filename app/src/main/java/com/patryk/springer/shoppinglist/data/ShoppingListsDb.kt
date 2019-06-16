@@ -16,6 +16,6 @@ import com.patryk.springer.shoppinglist.data.entity.ShoppingList
 @TypeConverters(DateConverter::class)
 abstract class ShoppingListsDb : RoomDatabase() {
 
-	abstract fun shoppingListsDao(): ShoppingListsDao
-	abstract fun productsDao(): ProductDao
+    abstract fun shoppingListsDao(): ShoppingListsDao
+    abstract fun productsDao(): ProductDao
 }

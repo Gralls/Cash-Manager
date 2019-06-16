@@ -16,28 +16,28 @@ import javax.inject.Singleton
 @Singleton
 class ProductsDbRepo @Inject constructor(private val mDao: ProductDao) : ProductsRepo {
 
-	override fun getAllProducts(): Flowable<List<Product>> = mDao.getAllProducts()
+    override fun getAllProducts(): Flowable<List<Product>> = mDao.getAllProducts()
 
-	override fun createNewProduct(product: Product) {
-		Completable.fromAction { mDao.insertNewProduct(product) }.subscribeOn(Schedulers.io())
-				.observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun createNewProduct(product: Product) {
+        Completable.fromAction { mDao.insertNewProduct(product) }.subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun getProductsInList(listId: Int): Flowable<List<Product>> =
-		mDao.getProductsInList(listId)
+    override fun getProductsInList(listId: Int): Flowable<List<Product>> =
+        mDao.getProductsInList(listId)
 
-	override fun setProductChecked(productId: Int, isChecked: Boolean) {
-		Completable.fromAction { mDao.updateProductCheckedStatus(productId, isChecked) }
-				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun setProductChecked(productId: Int, isChecked: Boolean) {
+        Completable.fromAction { mDao.updateProductCheckedStatus(productId, isChecked) }
+            .subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun deleteProduct(productId: Int) {
-		Completable.fromAction { mDao.deleteProduct(productId) }.subscribeOn(Schedulers.io())
-				.observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun deleteProduct(productId: Int) {
+        Completable.fromAction { mDao.deleteProduct(productId) }.subscribeOn(Schedulers.io())
+            .observeOn(Schedulers.io()).subscribeBy()
+    }
 
-	override fun editProduct(name: String, quantity: Int, productId: Int) {
-		Completable.fromAction { mDao.updateProduct(name, quantity, productId) }
-				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
-	}
+    override fun editProduct(name: String, quantity: Int, productId: Int) {
+        Completable.fromAction { mDao.updateProduct(name, quantity, productId) }
+            .subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+    }
 }

@@ -7,9 +7,9 @@ import com.patryk.springer.shoppinglist.view.shoppinglists.BaseListContract
  */
 interface ArchivedListsContract {
 
-	interface View : BaseListContract.View<Presenter>
+    interface View : BaseListContract.View<Presenter>
 
-	interface Presenter : BaseListContract.Presenter {
-		fun onShoppingListUnarchived()
-	}
+    interface Presenter : BaseListContract.Presenter {
+        fun onShoppingListUnarchived()
+    }
 }

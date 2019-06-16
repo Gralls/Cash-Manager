@@ -12,54 +12,61 @@ import java.text.SimpleDateFormat
 /**
  * Created by Patryk Springer on 2019-06-15.
  */
-abstract class BaseListPresenter constructor(private val mView: BaseListContract.View<*>,
-											 private val mListsRepo: ShoppingListsRepo) :
-		BaseListContract.Presenter {
+abstract class BaseListPresenter constructor(
+    private val mView: BaseListContract.View<*>,
+    private val mListsRepo: ShoppingListsRepo
+) :
+    BaseListContract.Presenter {
 
-	protected var mSelectedShoppingList: ShoppingList? = null
-	private var mShoppingList: List<ShoppingListWithProducts> = emptyList()
-	private val mDisposable = CompositeDisposable()
-	private val mDateFormatter: SimpleDateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm")
+    protected var mSelectedShoppingList: ShoppingList? = null
+    private var mShoppingList: List<ShoppingListWithProducts> = emptyList()
+    private val mDisposable = CompositeDisposable()
+    private val mDateFormatter: SimpleDateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm")
 
-	abstract val mIsArchivedList: Boolean
+    abstract val mIsArchivedList: Boolean
 
-	override fun onAttach() {
-		mDisposable.add(mListsRepo.getShoppingListsWithProducts(mIsArchivedList).observeOn(
-				AndroidSchedulers.mainThread()).subscribeOn(Schedulers.io()).subscribeBy(
-				onNext = { lists ->
-					mShoppingList = lists
-					mView.updateShoppingLists()
-				}))
-	}
+    override fun onAttach() {
+        mDisposable.add(
+            mListsRepo.getShoppingListsWithProducts(mIsArchivedList).observeOn(
+                AndroidSchedulers.mainThread()
+            ).subscribeOn(Schedulers.io()).subscribeBy(
+                onNext = { lists ->
+                    mShoppingList = lists
+                    mView.updateShoppingLists()
+                })
+        )
+    }
 
-	override fun onShoppingListBind(position: Int, rowView: BaseListContract.RowView) {
-		val shoppingList = mShoppingList[position]
-		rowView.showListName(shoppingList.mShoppingList?.mName ?: "")
-		rowView.showProductsCount(shoppingList.getCheckedProductsCount(),
-				shoppingList.getProductsCount())
-		val createdDate: String = mDateFormatter.format(shoppingList.mShoppingList?.mDate)
-		rowView.showCreatedDate(createdDate)
-	}
+    override fun onShoppingListBind(position: Int, rowView: BaseListContract.RowView) {
+        val shoppingList = mShoppingList[position]
+        rowView.showListName(shoppingList.mShoppingList?.mName ?: "")
+        rowView.showProductsCount(
+            shoppingList.getCheckedProductsCount(),
+            shoppingList.getProductsCount()
+        )
+        val createdDate: String = mDateFormatter.format(shoppingList.mShoppingList?.mDate)
+        rowView.showCreatedDate(createdDate)
+    }
 
-	override fun onDetach() {
-		mDisposable.clear()
-	}
+    override fun onDetach() {
+        mDisposable.clear()
+    }
 
-	override fun onShoppingListLongClicked(position: Int) {
-		mSelectedShoppingList = mShoppingList[position].mShoppingList
-		mView.showContextMenu()
-	}
+    override fun onShoppingListLongClicked(position: Int) {
+        mSelectedShoppingList = mShoppingList[position].mShoppingList
+        mView.showContextMenu()
+    }
 
-	override fun onShoppingListClicked(position: Int) {
-		val listId = mShoppingList[position].mShoppingList?.mId ?: return
-		mView.openDetailsView(listId)
-	}
+    override fun onShoppingListClicked(position: Int) {
+        val listId = mShoppingList[position].mShoppingList?.mId ?: return
+        mView.openDetailsView(listId)
+    }
 
-	override fun onShoppingListRemoved() {
-		val listId = mSelectedShoppingList?.mId ?: return
-		mListsRepo.removeShoppingList(listId)
-		mSelectedShoppingList = null
-	}
+    override fun onShoppingListRemoved() {
+        val listId = mSelectedShoppingList?.mId ?: return
+        mListsRepo.removeShoppingList(listId)
+        mSelectedShoppingList = null
+    }
 
-	override fun getShoppingListSize(): Int = mShoppingList.size
+    override fun getShoppingListSize(): Int = mShoppingList.size
 }

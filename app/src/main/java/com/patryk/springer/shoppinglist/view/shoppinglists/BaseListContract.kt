@@ -7,23 +7,23 @@ import com.patryk.springer.shoppinglist.view.base.BaseContract
  */
 interface BaseListContract {
 
-	interface View<T : BaseContract.Presenter> : BaseContract.View<T> {
-		fun updateShoppingLists()
-		fun showContextMenu()
-		fun openDetailsView(listId: Int)
-	}
+    interface View<T : BaseContract.Presenter> : BaseContract.View<T> {
+        fun updateShoppingLists()
+        fun showContextMenu()
+        fun openDetailsView(listId: Int)
+    }
 
-	interface Presenter : BaseContract.Presenter {
-		fun getShoppingListSize(): Int
-		fun onShoppingListBind(position: Int, rowView: RowView)
-		fun onShoppingListLongClicked(position: Int)
-		fun onShoppingListRemoved()
-		fun onShoppingListClicked(position: Int)
-	}
+    interface Presenter : BaseContract.Presenter {
+        fun getShoppingListSize(): Int
+        fun onShoppingListBind(position: Int, rowView: RowView)
+        fun onShoppingListLongClicked(position: Int)
+        fun onShoppingListRemoved()
+        fun onShoppingListClicked(position: Int)
+    }
 
-	interface RowView {
-		fun showListName(name: String)
-		fun showProductsCount(uncheckedCount: Int, totalCount: Int)
-		fun showCreatedDate(date: String)
-	}
+    interface RowView {
+        fun showListName(name: String)
+        fun showProductsCount(uncheckedCount: Int, totalCount: Int)
+        fun showCreatedDate(date: String)
+    }
 }

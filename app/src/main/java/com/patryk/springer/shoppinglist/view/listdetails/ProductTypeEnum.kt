@@ -5,10 +5,10 @@ package com.patryk.springer.shoppinglist.view.listdetails
  */
 enum class ProductTypeEnum(val viewType: Int) {
 
-	CHECKED(0), UNCHECKED(1);
+    CHECKED(0), UNCHECKED(1);
 
-	companion object {
-		fun getProductTypeByViewType(viewType: Int): ProductTypeEnum =
-			values().find { it.viewType == viewType } ?: CHECKED
-	}
+    companion object {
+        fun getProductTypeByViewType(viewType: Int): ProductTypeEnum =
+            values().find { it.viewType == viewType } ?: CHECKED
+    }
 }

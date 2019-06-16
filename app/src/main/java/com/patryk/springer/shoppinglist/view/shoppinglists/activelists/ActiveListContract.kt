@@ -7,13 +7,13 @@ import com.patryk.springer.shoppinglist.view.shoppinglists.BaseListContract
  */
 interface ActiveListContract {
 
-	interface View : BaseListContract.View<Presenter> {
-		fun showNewListDialog()
-	}
+    interface View : BaseListContract.View<Presenter> {
+        fun showNewListDialog()
+    }
 
-	interface Presenter : BaseListContract.Presenter {
-		fun onCreateNewListClicked()
-		fun onShoppingListArchived()
-		fun onListSaved(listName: String)
-	}
+    interface Presenter : BaseListContract.Presenter {
+        fun onCreateNewListClicked()
+        fun onShoppingListArchived()
+        fun onListSaved(listName: String)
+    }
 }

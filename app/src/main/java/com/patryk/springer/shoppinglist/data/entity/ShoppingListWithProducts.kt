@@ -8,14 +8,14 @@ import androidx.room.Relation
  */
 class ShoppingListWithProducts {
 
-	@Embedded
-	var mShoppingList: ShoppingList? = null
+    @Embedded
+    var mShoppingList: ShoppingList? = null
 
-	@Relation(parentColumn = "id", entityColumn = "shoppingListId")
-	var mProducts: List<Product> = listOf()
+    @Relation(parentColumn = "id", entityColumn = "shoppingListId")
+    var mProducts: List<Product> = listOf()
 
-	fun isListArchived(): Boolean = mShoppingList?.mIsArchived ?: false
-	fun getCheckedProductsCount(): Int = mProducts.count { it.mIsChecked }
-	fun getProductsCount(): Int = mProducts.count()
-	fun getProductAtPosition(position: Int): Product = mProducts[position]
+    fun isListArchived(): Boolean = mShoppingList?.mIsArchived ?: false
+    fun getCheckedProductsCount(): Int = mProducts.count { it.mIsChecked }
+    fun getProductsCount(): Int = mProducts.count()
+    fun getProductAtPosition(position: Int): Product = mProducts[position]
 }

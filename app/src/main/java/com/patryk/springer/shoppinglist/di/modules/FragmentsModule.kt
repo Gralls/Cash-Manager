@@ -31,7 +31,7 @@ abstract class FragmentsModule {
     @ContributesAndroidInjector(modules = [ArchivedListsModule::class])
     internal abstract fun archivedListsFragment(): ArchivedListsFragment
 
-	@FragmentScope
-	@ContributesAndroidInjector(modules = [ListDetailsModule::class])
-	internal abstract fun listDetailsFragment(): ListDetailsFragment
+    @FragmentScope
+    @ContributesAndroidInjector(modules = [ListDetailsModule::class])
+    internal abstract fun listDetailsFragment(): ListDetailsFragment
 }

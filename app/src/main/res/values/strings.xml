@@ -7,4 +7,5 @@
     <string name="products_count_delimiter">/</string>
     <string name="create_new_product_title">New product</string>
     <string name="edit_product_title">Edit product</string>
+    <string name="create_confirmation">Submit</string>
 </resources>

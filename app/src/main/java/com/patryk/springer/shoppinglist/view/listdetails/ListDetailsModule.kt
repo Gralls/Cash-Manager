@@ -11,12 +11,13 @@ import dagger.Module
 @Module
 abstract class ListDetailsModule {
 
-	@FragmentScope
-	@Binds
-	abstract fun bindListDetailsPresenter(
-			presenter: ListDetailsPresenter): ListDetailsContract.Presenter
+    @FragmentScope
+    @Binds
+    abstract fun bindListDetailsPresenter(
+        presenter: ListDetailsPresenter
+    ): ListDetailsContract.Presenter
 
-	@FragmentScope
-	@Binds
-	abstract fun bindsListDetailsView(view: ListDetailsFragment): ListDetailsContract.View
+    @FragmentScope
+    @Binds
+    abstract fun bindsListDetailsView(view: ListDetailsFragment): ListDetailsContract.View
 }

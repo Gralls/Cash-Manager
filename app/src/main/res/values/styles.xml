@@ -1,35 +1,32 @@
 <resources>
 
-	<!-- Base application theme. -->
+    <!-- Base application theme. -->
 
-	<style name="AppTheme"
-		parent="Theme.AppCompat.Light.NoActionBar">
-		<!-- Customize your theme here. -->
-		<item name="colorPrimary">@color/colorPrimary</item>
-		<item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-		<item name="colorAccent">@color/colorAccent</item>
-		<item name="windowActionModeOverlay">true</item>
-		<item name="actionModeBackground">@color/colorPrimary</item>
-		<item name="actionModeCloseButtonStyle">@style/ActionModeCloseButton</item>
-	</style>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>
+        <item name="actionModeCloseButtonStyle">@style/ActionModeCloseButton</item>
+    </style>
 
-	<style name="AppTheme.AppBarOverlay"
-		parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-	<style name="ListRowHeader">
-		<item name="android:textColor">@color/colorAccent</item>
-		<item name="android:textStyle">bold</item>
-		<item name="android:textSize">20sp</item>
-	</style>
+    <style name="ListRowHeader">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
-	<style name="ListRowQuantity">
-		<item name="android:textSize">16sp</item>
-		<item name="android:textColor">@color/colorAccent</item>
-		<item name="android:textStyle">bold</item>
-	</style>
+    <style name="ListRowQuantity">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
-	<style name="ActionModeCloseButton"
-		parent="Widget.AppCompat.Light.ActionButton.CloseMode">
-		<item name="android:tint">#ffffff</item>
-	</style>
+    <style name="ActionModeCloseButton" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
+        <item name="android:tint">#ffffff</item>
+    </style>
 </resources>

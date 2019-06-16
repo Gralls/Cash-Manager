@@ -13,9 +13,9 @@ import dagger.Module
 @Module
 abstract class ShoppingListsRepoModule {
 
-	@Binds
-	abstract fun bindShoppingListRepo(repo: ShoppingListsDbRepo): ShoppingListsRepo
+    @Binds
+    abstract fun bindShoppingListRepo(repo: ShoppingListsDbRepo): ShoppingListsRepo
 
-	@Binds
-	abstract fun bindProductRepo(repo: ProductsDbRepo): ProductsRepo
+    @Binds
+    abstract fun bindProductRepo(repo: ProductsDbRepo): ProductsRepo
 }

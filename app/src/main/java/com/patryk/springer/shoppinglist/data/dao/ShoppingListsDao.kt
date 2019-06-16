@@ -16,22 +16,23 @@ import io.reactivex.Flowable
 @TypeConverters(DateConverter::class)
 abstract class ShoppingListsDao {
 
-	@Insert
-	abstract fun createNewShoppingList(shoppingList: ShoppingList)
+    @Insert
+    abstract fun createNewShoppingList(shoppingList: ShoppingList)
 
-	@Query("SELECT * FROM shoppinglist WHERE isArchived = 0")
-	abstract fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
+    @Query("SELECT * FROM shoppinglist WHERE isArchived = 0")
+    abstract fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
 
-	@Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date")
-	abstract fun getShoppingListsWithProducts(
-			isArchived: Boolean): Flowable<List<ShoppingListWithProducts>>
+    @Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date")
+    abstract fun getShoppingListsWithProducts(
+        isArchived: Boolean
+    ): Flowable<List<ShoppingListWithProducts>>
 
-	@Query("UPDATE shoppinglist SET isArchived = :isArchived WHERE id = :listId")
-	abstract fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
+    @Query("UPDATE shoppinglist SET isArchived = :isArchived WHERE id = :listId")
+    abstract fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
 
-	@Query("DELETE FROM shoppinglist WHERE id = :listId ")
-	abstract fun removeShoppingList(listId: Int)
+    @Query("DELETE FROM shoppinglist WHERE id = :listId ")
+    abstract fun removeShoppingList(listId: Int)
 
-	@Query("SELECT * FROM shoppinglist WHERE id = :listId")
-	abstract fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
+    @Query("SELECT * FROM shoppinglist WHERE id = :listId")
+    abstract fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
 }
