@@ -9,5 +9,7 @@ interface ArchivedListsContract {
 
 	interface View : BaseListContract.View<Presenter>
 
-	interface Presenter : BaseListContract.Presenter
+	interface Presenter : BaseListContract.Presenter {
+		fun onShoppingListUnarchived()
+	}
 }

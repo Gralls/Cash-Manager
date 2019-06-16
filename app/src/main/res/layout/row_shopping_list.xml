@@ -21,7 +21,7 @@
 
 		<TextView
 			android:id="@+id/tv_row_shopping_list_name"
-			style="@style/ShoppingListHeader"
+			style="@style/ListRowHeader"
 			android:layout_width="0dp"
 			android:layout_height="wrap_content"
 			android:layout_marginEnd="8dp"
@@ -33,7 +33,7 @@
 
 		<TextView
 			android:id="@+id/tv_row_shopping_list_unchecked_prod"
-			style="@style/ShoppingListProdCount"
+			style="@style/ListRowQuantity"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"
@@ -44,7 +44,7 @@
 
 		<TextView
 			android:id="@+id/tv_row_shopping_list_prod_delim"
-			style="@style/ShoppingListProdCount"
+			style="@style/ListRowQuantity"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:text="@string/products_count_delimiter"
@@ -54,7 +54,7 @@
 
 		<TextView
 			android:id="@+id/tv_row_shopping_list_total_prod"
-			style="@style/ShoppingListProdCount"
+			style="@style/ListRowQuantity"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			app:layout_constraintBottom_toBottomOf="@id/tv_row_shopping_list_prod_delim"

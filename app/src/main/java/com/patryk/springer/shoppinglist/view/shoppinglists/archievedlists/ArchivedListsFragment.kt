@@ -35,6 +35,12 @@ class ArchivedListsFragment : BaseListFragment<ArchivedListsContract.Presenter>(
 				mode?.finish()
 				true
 			}
+			R.id.menu_unarchive -> {
+				mPresenter.onShoppingListUnarchived()
+				mode?.finish()
+				true
+			}
+
 			else -> false
 		}
 	}

@@ -21,6 +21,9 @@ class ShoppingListAdapter(private val mPresenter: BaseListContract.Presenter) :
 			mPresenter.onShoppingListLongClicked(viewHolder.adapterPosition)
 			true
 		}
+		view.setOnClickListener {
+			mPresenter.onShoppingListClicked(viewHolder.adapterPosition)
+		}
 		return viewHolder
 	}
 

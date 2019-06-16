@@ -50,6 +50,11 @@ abstract class BaseListPresenter constructor(private val mView: BaseListContract
 		mView.showContextMenu()
 	}
 
+	override fun onShoppingListClicked(position: Int) {
+		val listId = mShoppingList[position].mShoppingList?.mId ?: return
+		mView.openDetailsView(listId)
+	}
+
 	override fun onShoppingListRemoved() {
 		val listId = mSelectedShoppingList?.mId ?: return
 		mListsRepo.removeShoppingList(listId)

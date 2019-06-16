@@ -12,4 +12,5 @@ interface ProductsRepo {
 	fun getAllProducts(): Flowable<List<Product>>
 	fun createNewProduct(product: Product)
 	fun getProductsInList(listId: Int): Flowable<List<Product>>
+	fun setProductChecked(productId: Int, isChecked: Boolean)
 }

@@ -3,5 +3,7 @@
     <string name="create_new_list_title">Create new list</string>
     <string name="confirm_create_new_list">Create</string>
     <string name="cancel_create_new_list">Cancel</string>
+    <string name="archived_list">Archived</string>
     <string name="products_count_delimiter">/</string>
+    <string name="create_new_product_title">New product</string>
 </resources>

@@ -1,6 +1,8 @@
 package com.patryk.springer.shoppinglist.di.modules
 
 import com.patryk.springer.shoppinglist.di.scopes.FragmentScope
+import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment
+import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsModule
 import com.patryk.springer.shoppinglist.view.main.MainFragment
 import com.patryk.springer.shoppinglist.view.main.MainModule
 import com.patryk.springer.shoppinglist.view.shoppinglists.activelists.ActiveListsFragment
@@ -28,4 +30,8 @@ abstract class FragmentsModule {
     @FragmentScope
     @ContributesAndroidInjector(modules = [ArchivedListsModule::class])
     internal abstract fun archivedListsFragment(): ArchivedListsFragment
+
+	@FragmentScope
+	@ContributesAndroidInjector(modules = [ListDetailsModule::class])
+	internal abstract fun listDetailsFragment(): ListDetailsFragment
 }

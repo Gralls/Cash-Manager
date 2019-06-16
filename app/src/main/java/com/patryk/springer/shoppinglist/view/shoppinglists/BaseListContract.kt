@@ -10,6 +10,7 @@ interface BaseListContract {
 	interface View<T : BaseContract.Presenter> : BaseContract.View<T> {
 		fun updateShoppingLists()
 		fun showContextMenu()
+		fun openDetailsView(listId: Int)
 	}
 
 	interface Presenter : BaseContract.Presenter {
@@ -17,6 +18,7 @@ interface BaseListContract {
 		fun onShoppingListBind(position: Int, rowView: RowView)
 		fun onShoppingListLongClicked(position: Int)
 		fun onShoppingListRemoved()
+		fun onShoppingListClicked(position: Int)
 	}
 
 	interface RowView {

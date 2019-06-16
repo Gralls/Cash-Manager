@@ -18,17 +18,17 @@ import javax.inject.Singleton
  */
 @Singleton
 @Component(
-		modules = [ApplicationModule::class, AndroidSupportInjectionModule::class, FragmentsModule::class, ActivitiesModule::class, DatabaseModule::class, ShoppingListsRepoModule::class]
-)
+		modules = [ApplicationModule::class, AndroidSupportInjectionModule::class, FragmentsModule::class, ActivitiesModule::class, DatabaseModule::class, ShoppingListsRepoModule::class])
 interface ApplicationComponent : AndroidInjector<DaggerApplication> {
-    override fun inject(instance: DaggerApplication)
 
-    @Component.Builder
-    interface Builder {
+	override fun inject(instance: DaggerApplication)
 
-        @BindsInstance
-        fun application(application: Application): Builder
+	@Component.Builder
+	interface Builder {
 
-        fun build(): ApplicationComponent
-    }
+		@BindsInstance
+		fun application(application: Application): Builder
+
+		fun build(): ApplicationComponent
+	}
 }

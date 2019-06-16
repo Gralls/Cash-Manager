@@ -7,6 +7,7 @@ import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.patryk.springer.shoppinglist.R
 import com.patryk.springer.shoppinglist.view.base.BaseViewPagerFragment
+import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment
 import com.patryk.springer.shoppinglist.view.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_shopping_lists.*
 
@@ -41,5 +42,9 @@ abstract class BaseListFragment<T : BaseListContract.Presenter> : BaseViewPagerF
 
 	override fun onDestroyActionMode(mode: ActionMode?) {
 		mActionMode = null
+	}
+
+	override fun openDetailsView(listId: Int) {
+		mBaseActivity.setChildView(ListDetailsFragment.newInstance(listId))
 	}
 }

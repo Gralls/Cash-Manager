@@ -14,9 +14,7 @@ class MainActivity : BaseActivity() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		val newFragment = MainFragment()
-		val transaction = supportFragmentManager.beginTransaction()
-		transaction.replace(R.id.fl_main_container, newFragment).commit()
+		setView(MainFragment())
 	}
 
 	fun setViewPagerForTableLayout(viewPager: ViewPager?) {
@@ -26,6 +24,10 @@ class MainActivity : BaseActivity() {
 
 	private fun setTableLayoutVisibility(isVisible: Boolean) {
 		tl_main_tabs_container.visibility = if (isVisible) View.VISIBLE else View.GONE
+	}
+
+	fun setToolbarTitle(title: String) {
+		tb_main_toolbar?.title = title
 	}
 
 	fun setToolbarTitle(titleId: Int) {

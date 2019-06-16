@@ -16,13 +16,13 @@
 	<style name="AppTheme.AppBarOverlay"
 		parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-	<style name="ShoppingListHeader">
+	<style name="ListRowHeader">
 		<item name="android:textColor">@color/colorAccent</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">20sp</item>
 	</style>
 
-	<style name="ShoppingListProdCount">
+	<style name="ListRowQuantity">
 		<item name="android:textSize">16sp</item>
 		<item name="android:textColor">@color/colorAccent</item>
 		<item name="android:textStyle">bold</item>

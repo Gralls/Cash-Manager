@@ -13,6 +13,8 @@ data class Product(
 		val mName: String,
 		@ColumnInfo(name = "shoppingListId")
 		val mShoppingListId: Int,
+		@ColumnInfo(name = "quantity")
+		val mQuantity: Int = 0,
 		@ColumnInfo(name = "isChecked")
 		val mIsChecked: Boolean = false,
 		@PrimaryKey(autoGenerate = true)

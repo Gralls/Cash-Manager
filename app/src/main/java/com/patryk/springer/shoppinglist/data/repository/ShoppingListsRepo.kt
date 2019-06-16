@@ -14,4 +14,5 @@ interface ShoppingListsRepo {
 	fun getShoppingListsWithProducts(isArchived: Boolean): Flowable<List<ShoppingListWithProducts>>
 	fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
 	fun removeShoppingList(listId: Int)
+	fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
 }

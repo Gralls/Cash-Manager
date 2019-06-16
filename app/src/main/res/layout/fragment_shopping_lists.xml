@@ -22,8 +22,8 @@
 		android:id="@+id/fab_active_shopping_list_create"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:layout_margin="8dp"
 		android:src="@drawable/ic_add"
+		app:useCompatPadding="true"
 		app:layout_constraintBottom_toBottomOf="parent"
 		app:layout_constraintEnd_toEndOf="parent"
 		/>

@@ -20,4 +20,7 @@ abstract class ProductDao {
 
 	@Query("SELECT * FROM product WHERE shoppingListId = :listId")
 	abstract fun getProductsInList(listId: Int): Flowable<List<Product>>
+
+	@Query("UPDATE product SET isChecked = :isChecked WHERE id = :productId ")
+	abstract fun updateProductCheckedStatus(productId: Int, isChecked: Boolean)
 }

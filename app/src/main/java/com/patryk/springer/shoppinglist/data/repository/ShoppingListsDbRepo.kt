@@ -38,4 +38,7 @@ class ShoppingListsDbRepo @Inject constructor(val mDao: ShoppingListsDao) : Shop
 		Completable.fromAction { mDao.removeShoppingList(listId) }.subscribeOn(Schedulers.io())
 				.observeOn(Schedulers.io()).subscribeBy()
 	}
+
+	override fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts> =
+		mDao.getShoppingListDetails(listId)
 }

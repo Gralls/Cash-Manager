@@ -25,4 +25,9 @@ class ProductsDbRepo @Inject constructor(private val mDao: ProductDao) : Product
 
 	override fun getProductsInList(listId: Int): Flowable<List<Product>> =
 		mDao.getProductsInList(listId)
+
+	override fun setProductChecked(productId: Int, isChecked: Boolean) {
+		Completable.fromAction { mDao.updateProductCheckedStatus(productId, isChecked) }
+				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+	}
 }

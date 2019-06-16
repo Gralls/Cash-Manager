@@ -22,7 +22,7 @@ abstract class ShoppingListsDao {
 	@Query("SELECT * FROM shoppinglist WHERE isArchived = 0")
 	abstract fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
 
-	@Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived")
+	@Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date")
 	abstract fun getShoppingListsWithProducts(
 			isArchived: Boolean): Flowable<List<ShoppingListWithProducts>>
 
@@ -31,4 +31,7 @@ abstract class ShoppingListsDao {
 
 	@Query("DELETE FROM shoppinglist WHERE id = :listId ")
 	abstract fun removeShoppingList(listId: Int)
+
+	@Query("SELECT * FROM shoppinglist WHERE id = :listId")
+	abstract fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
 }

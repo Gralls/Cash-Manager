@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hint_new_list_name">List name</string>
-
+	<string name="hint_new_product_name">Product name</string>
+	<string name="hint_new_product_quantity">Quantity</string>
 </resources>
