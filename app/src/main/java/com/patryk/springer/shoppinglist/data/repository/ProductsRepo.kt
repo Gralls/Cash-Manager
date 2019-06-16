@@ -13,4 +13,6 @@ interface ProductsRepo {
 	fun createNewProduct(product: Product)
 	fun getProductsInList(listId: Int): Flowable<List<Product>>
 	fun setProductChecked(productId: Int, isChecked: Boolean)
+	fun deleteProduct(productId: Int)
+	fun editProduct(name: String, quantity: Int, productId: Int)
 }

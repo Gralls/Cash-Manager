@@ -30,4 +30,14 @@ class ProductsDbRepo @Inject constructor(private val mDao: ProductDao) : Product
 		Completable.fromAction { mDao.updateProductCheckedStatus(productId, isChecked) }
 				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
 	}
+
+	override fun deleteProduct(productId: Int) {
+		Completable.fromAction { mDao.deleteProduct(productId) }.subscribeOn(Schedulers.io())
+				.observeOn(Schedulers.io()).subscribeBy()
+	}
+
+	override fun editProduct(name: String, quantity: Int, productId: Int) {
+		Completable.fromAction { mDao.updateProduct(name, quantity, productId) }
+				.subscribeOn(Schedulers.io()).observeOn(Schedulers.io()).subscribeBy()
+	}
 }

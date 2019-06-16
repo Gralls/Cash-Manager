@@ -21,6 +21,7 @@ class ListDetailsPresenter @Inject constructor(private val mView: ListDetailsCon
 	private val mDisposable = CompositeDisposable()
 	private var mShoppingList: ShoppingListWithProducts? = null
 	private var mListId: Int = 0
+	private var mSelectedProduct: Product? = null
 
 	override fun refreshView(listId: Int) {
 		mListId = listId
@@ -68,5 +69,23 @@ class ListDetailsPresenter @Inject constructor(private val mView: ListDetailsCon
 
 	override fun onDetach() {
 		mDisposable.clear()
+	}
+
+	override fun isShoppingListActive(): Boolean = !(mShoppingList?.isListArchived() ?: false)
+	override fun onProductLongClicked(position: Int) {
+		mSelectedProduct = mShoppingList?.getProductAtPosition(position)
+		mView.showActionMenu()
+	}
+
+	override fun onProductRemoved() {
+		mProductsRepo.deleteProduct(mSelectedProduct?.mId ?: 0)
+	}
+
+	override fun onProductEditClicked() {
+		mView.showEditProductDialog(mSelectedProduct?.mName ?: "", mSelectedProduct?.mQuantity ?: 0)
+	}
+
+	override fun onProductEditConfirmed(name: String, quantity: Int) {
+		mProductsRepo.editProduct(name, quantity, mSelectedProduct?.mId ?: 0)
 	}
 }

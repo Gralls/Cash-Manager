@@ -14,7 +14,7 @@ class MainActivity : BaseActivity() {
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
-		setView(MainFragment())
+		savedInstanceState ?: setView(MainFragment())
 	}
 
 	fun setViewPagerForTableLayout(viewPager: ViewPager?) {

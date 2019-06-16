@@ -29,9 +29,18 @@ class ProductsListAdapter(private val mPresenter: ListDetailsContract.Presenter)
 			}
 		}
 		val viewHolder = ViewHolder(view)
-		view.setOnClickListener {
-			mPresenter.onProductChecked(viewHolder.adapterPosition)
+		if (mPresenter.isShoppingListActive()) {
+			view.setOnClickListener {
+				mPresenter.onProductChecked(viewHolder.adapterPosition)
+			}
+
+			view.setOnLongClickListener {
+				mPresenter.onProductLongClicked(viewHolder.adapterPosition)
+				true
+			}
 		}
+
+
 		return viewHolder
 	}
 

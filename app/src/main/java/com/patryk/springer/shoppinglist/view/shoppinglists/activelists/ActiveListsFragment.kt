@@ -1,5 +1,6 @@
 package com.patryk.springer.shoppinglist.view.shoppinglists.activelists
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.ActionMode
 import android.view.LayoutInflater
@@ -17,7 +18,7 @@ import javax.inject.Inject
  * Created by Patryk Springer on 2019-06-13.
  */
 class ActiveListsFragment : BaseListFragment<ActiveListContract.Presenter>(),
-		ActiveListContract.View, ActionMode.Callback {
+		ActiveListContract.View {
 
 
 	@Inject
@@ -55,15 +56,17 @@ class ActiveListsFragment : BaseListFragment<ActiveListContract.Presenter>(),
 	}
 
 	override fun showNewListDialog() {
-		AlertDialog.Builder(requireContext()).setTitle(R.string.create_new_list_title)
-				.setView(LayoutInflater.from(context).inflate(R.layout.dialog_create_list, null))
-				.setPositiveButton(R.string.confirm_create_new_list) { dialog, _ ->
-					val etNewListName =
-						(dialog as AlertDialog).findViewById<EditText>(R.id.et_create_list_name)
-					val name = etNewListName?.text.toString()
-					if (name.isNotBlank()) {
-						mPresenter.onListSaved(name)
-					}
-				}.setNegativeButton(R.string.cancel_create_new_list, null).create().show()
+		val view = LayoutInflater.from(context).inflate(R.layout.dialog_create_list, null)
+		val positiveCallback: DialogInterface.OnClickListener =
+			DialogInterface.OnClickListener { dialog, which ->
+				val etNewListName =
+					(dialog as AlertDialog).findViewById<EditText>(R.id.et_create_list_name)
+				val name = etNewListName?.text.toString()
+				if (name.isNotBlank()) {
+					mPresenter.onListSaved(name)
+				}
+
+			}
+		showAlertDialog(R.string.create_new_list_title, view, positiveCallback)
 	}
 }

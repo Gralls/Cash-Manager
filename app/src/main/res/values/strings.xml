@@ -6,4 +6,5 @@
     <string name="archived_list">Archived</string>
     <string name="products_count_delimiter">/</string>
     <string name="create_new_product_title">New product</string>
+    <string name="edit_product_title">Edit product</string>
 </resources>

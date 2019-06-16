@@ -23,4 +23,10 @@ abstract class ProductDao {
 
 	@Query("UPDATE product SET isChecked = :isChecked WHERE id = :productId ")
 	abstract fun updateProductCheckedStatus(productId: Int, isChecked: Boolean)
+
+	@Query("DELETE FROM product WHERE id = :productId")
+	abstract fun deleteProduct(productId: Int)
+
+	@Query("UPDATE product SET name = :name, quantity = :quantity WHERE id = :productId")
+	abstract fun updateProduct(name: String, quantity: Int, productId: Int)
 }

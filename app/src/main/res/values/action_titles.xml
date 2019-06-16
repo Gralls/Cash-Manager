@@ -3,4 +3,6 @@
 	<string name="title_action_archive">Archive list</string>
 	<string name="title_action_unarchive">Unarchive list</string>
 	<string name="title_action_delete">Delete list</string>
+	<string name="title_action_product_delete">Delete product</string>
+	<string name="title_action_product_edit">Edit product</string>
 </resources>
