@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:padding="16dp">
+    android:padding="@dimen/padding_normal">
 
     <TextView
         android:id="@+id/tv_create_new_product_title"
@@ -21,8 +21,8 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="@dimen/margin_normal"
+        android:layout_marginEnd="@dimen/margin_small"
         android:hint="@string/hint_new_product_name"
         app:layout_constraintEnd_toStartOf="@id/til_create_product_quantity"
         app:layout_constraintStart_toStartOf="parent"
@@ -57,7 +57,7 @@
         android:id="@+id/btn_create_product_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/margin_normal"
         android:background="@drawable/submit_button_background"
         android:text="@string/create_confirmation"
         android:textColor="@android:color/white"

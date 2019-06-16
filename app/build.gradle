@@ -26,31 +26,34 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.core:core-ktx:$ktx_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //UI
     implementation "androidx.appcompat:appcompat:$android_support_appcompat_version"
     implementation "com.google.android.material:material:$android_support_material_version"
     implementation "androidx.cardview:cardview:$android_support_cardview_version"
-
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    //Dagger
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     implementation "com.google.dagger:dagger:$dagger_version"
     implementation "com.google.dagger:dagger-android:$dagger_version"
     implementation "com.google.dagger:dagger-android-support:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-
+    //Room
     implementation "android.arch.persistence.room:runtime:$room_version"
     kapt "android.arch.persistence.room:compiler:$room_version"
     implementation "android.arch.persistence.room:rxjava2:$room_version"
-
-    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
-    implementation 'io.reactivex.rxjava2:rxjava:2.1.9'
-    implementation 'com.jakewharton.rxbinding2:rxbinding-kotlin:2.1.0'
-    implementation 'io.reactivex.rxjava2:rxkotlin:2.2.0'
-
-    implementation 'com.jakewharton.timber:timber:4.7.1'
-
-
-    implementation 'androidx.core:core-ktx:1.0.2'
-    implementation "androidx.constraintlayout:constraintlayout:$constraint_version"
+    //Rx
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxjava:$rxjava_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbinding_version"
+    implementation "io.reactivex.rxjava2:rxkotlin:$rxkotlin_version"
+    //Logs
+    implementation "com.jakewharton.timber:timber:$timber_version"
+    //Leaks
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$leakcanary_version"
+    releaseImplementation "com.squareup.leakcanary:leakcanary-android-no-op:$leakcanary_version"
+    //Tests
     testImplementation "junit:junit:$junit_version"
     androidTestImplementation "androidx.test:runner:$test_runner_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_core_version"

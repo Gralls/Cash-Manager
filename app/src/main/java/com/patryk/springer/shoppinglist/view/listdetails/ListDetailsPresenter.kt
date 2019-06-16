@@ -6,6 +6,7 @@ import com.patryk.springer.shoppinglist.data.repository.ProductsRepo
 import com.patryk.springer.shoppinglist.data.repository.ShoppingListsRepo
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.rxkotlin.plusAssign
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
@@ -48,7 +49,7 @@ class ListDetailsPresenter @Inject constructor(
     }
 
     override fun onAttach() {
-        mDisposable.add(
+        mDisposable +=
             mListRepo.getShoppingListDetails(mListId).observeOn(
                 AndroidSchedulers.mainThread()
             ).subscribeOn(Schedulers.io()).subscribeBy(
@@ -60,7 +61,7 @@ class ListDetailsPresenter @Inject constructor(
                     mView.showAddNewProductButton(!list.isListArchived())
                     mView.refreshList()
                 })
-        )
+
     }
 
     override fun onNewProductAdded(name: String, quantity: Int) {
@@ -83,7 +84,10 @@ class ListDetailsPresenter @Inject constructor(
     }
 
     override fun onProductRemoved() {
-        mProductsRepo.deleteProduct(mSelectedProduct?.mId ?: 0)
+        mSelectedProduct?.let {
+            mProductsRepo.deleteProduct(it.mId)
+
+        }
     }
 
     override fun onProductEditClicked() {

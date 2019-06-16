@@ -1,6 +1,7 @@
 package com.patryk.springer.shoppinglist
 
 import com.patryk.springer.shoppinglist.di.components.DaggerApplicationComponent
+import com.squareup.leakcanary.LeakCanary
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import timber.log.Timber
@@ -12,6 +13,8 @@ class ShoppingListApplication : DaggerApplication() {
 
     override fun onCreate() {
         super.onCreate()
+        if (LeakCanary.isInAnalyzerProcess(this)) return
+        LeakCanary.install(this)
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
