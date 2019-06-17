@@ -7,8 +7,8 @@ import android.view.View
 import com.jakewharton.rxbinding2.widget.RxTextView
 import com.patryk.springer.shoppinglist.R
 import com.patryk.springer.shoppinglist.view.base.BaseDialogFragment
-import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment.Companion.EDIT_PRODUCT_INTENT_CODE
-import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment.Companion.NEW_PRODUCT_INTENT_CODE
+import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment.EDIT_PRODUCT_INTENT_CODE
+import com.patryk.springer.shoppinglist.view.listdetails.ListDetailsFragment.NEW_PRODUCT_INTENT_CODE
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.Observables
@@ -75,7 +75,7 @@ class NewProductDialogFragment : BaseDialogFragment() {
         val isNewProduct = arguments == null
         val intent = Intent().apply {
             putExtra(ListDetailsFragment.PRODUCT_NAME_KEY, name)
-            putExtra(ListDetailsFragment.PRODUT_QUANTITY_KEY, quantity)
+            putExtra(ListDetailsFragment.PRODUCT_QUANTITY_KEY, quantity)
         }
 
         val requestCode =
