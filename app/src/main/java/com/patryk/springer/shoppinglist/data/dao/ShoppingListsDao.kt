@@ -1,9 +1,6 @@
 package com.patryk.springer.shoppinglist.data.dao
 
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.TypeConverters
+import androidx.room.*
 import com.patryk.springer.shoppinglist.data.converters.DateConverter
 import com.patryk.springer.shoppinglist.data.entity.ShoppingList
 import com.patryk.springer.shoppinglist.data.entity.ShoppingListWithProducts
@@ -22,6 +19,7 @@ abstract class ShoppingListsDao {
     @Query("SELECT * FROM shoppinglist WHERE isArchived = 0")
     abstract fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
 
+    @Transaction
     @Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date DESC")
     abstract fun getShoppingListsWithProducts(
         isArchived: Boolean
@@ -36,6 +34,7 @@ abstract class ShoppingListsDao {
     @Query("DELETE FROM shoppinglist WHERE id = :listId ")
     abstract fun removeShoppingList(listId: Int)
 
+    @Transaction
     @Query("SELECT * FROM shoppinglist WHERE id = :listId")
     abstract fun getShoppingListDetails(listId: Int): Flowable<ShoppingListWithProducts>
 }
