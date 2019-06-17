@@ -69,8 +69,10 @@ class ListDetailsPresenter @Inject constructor(
     }
 
     override fun onProductChecked(position: Int) {
-        val product: Product = mShoppingList?.getProductAtPosition(position) ?: return
-        mProductsRepo.setProductChecked(product.mId, !product.mIsChecked)
+        if (isShoppingListActive()) {
+            val product: Product = mShoppingList?.getProductAtPosition(position) ?: return
+            mProductsRepo.setProductChecked(product.mId, !product.mIsChecked)
+        }
     }
 
     override fun onDetach() {
@@ -79,8 +81,10 @@ class ListDetailsPresenter @Inject constructor(
 
     override fun isShoppingListActive(): Boolean = !(mShoppingList?.isListArchived() ?: false)
     override fun onProductLongClicked(position: Int) {
-        mSelectedProduct = mShoppingList?.getProductAtPosition(position)
-        mView.showActionMenu()
+        if (isShoppingListActive()) {
+            mSelectedProduct = mShoppingList?.getProductAtPosition(position)
+            mView.showActionMenu()
+        }
     }
 
     override fun onProductRemoved() {
