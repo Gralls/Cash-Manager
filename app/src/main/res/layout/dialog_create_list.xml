@@ -6,6 +6,7 @@
     android:padding="@dimen/padding_normal">
 
     <TextView
+        android:id="@+id/tv_create_list_title"
         style="@style/ListRowHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

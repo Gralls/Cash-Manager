@@ -9,11 +9,14 @@ interface ActiveListContract {
 
     interface View : BaseListContract.View<Presenter> {
         fun showNewListDialog()
+        fun showEditListDialog(listName: String)
     }
 
     interface Presenter : BaseListContract.Presenter {
         fun onCreateNewListClicked()
         fun onShoppingListArchived()
+        fun onShoppingListEdit()
+        fun onShoppingListEditSaved(newName: String)
         fun onListSaved(listName: String)
     }
 }

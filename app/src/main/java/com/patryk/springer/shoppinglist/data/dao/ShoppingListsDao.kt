@@ -22,13 +22,16 @@ abstract class ShoppingListsDao {
     @Query("SELECT * FROM shoppinglist WHERE isArchived = 0")
     abstract fun getActiveShoppingLists(): Flowable<List<ShoppingList>>
 
-    @Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date")
+    @Query("SELECT * FROM shoppinglist WHERE isArchived = :isArchived ORDER BY date DESC")
     abstract fun getShoppingListsWithProducts(
         isArchived: Boolean
     ): Flowable<List<ShoppingListWithProducts>>
 
     @Query("UPDATE shoppinglist SET isArchived = :isArchived WHERE id = :listId")
     abstract fun setShoppingListArchivedStatus(listId: Int, isArchived: Boolean)
+
+    @Query("UPDATE shoppinglist SET name = :listName WHERE id = :listId")
+    abstract fun setShoppingListName(listId: Int, listName: String)
 
     @Query("DELETE FROM shoppinglist WHERE id = :listId ")
     abstract fun removeShoppingList(listId: Int)

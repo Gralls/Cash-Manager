@@ -15,7 +15,7 @@
 
         <CheckedTextView
             android:id="@+id/tv_row_product_name"
-            style="@style/ListRowHeader"
+            style="@style/ListCheckedRowHeader"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/margin_normal"
@@ -23,13 +23,15 @@
             android:checkMark="@null"
             android:drawableStart="?android:attr/listChoiceIndicatorMultiple"
             android:drawablePadding="8dp"
+            android:checkMarkTint="@color/colorGray"
+            android:drawableTint="@color/colorGray"
             android:gravity="center_vertical"
             android:minHeight="48dp"
             tools:text="Product name" />
 
         <TextView
             android:id="@+id/tv_row_product_quantity"
-            style="@style/ListRowQuantity"
+            style="@style/ListCheckedRowQuantity"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/margin_normal"

@@ -30,4 +30,16 @@ class ActiveListsPresenter @Inject constructor(
         mListsRepo.setShoppingListArchivedStatus(listId, true)
         mSelectedShoppingList = null
     }
+
+    override fun onShoppingListEdit() {
+        mSelectedShoppingList?.let { list ->
+            mView.showEditListDialog(list.mName)
+        }
+    }
+
+    override fun onShoppingListEditSaved(newName: String) {
+        mSelectedShoppingList?.let { list ->
+            mListsRepo.setShoppingListName(list.mId, newName)
+        }
+    }
 }
