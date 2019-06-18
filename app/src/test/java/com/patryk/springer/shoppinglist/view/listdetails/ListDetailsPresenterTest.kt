@@ -77,12 +77,6 @@ class ListDetailsPresenterTest : BaseTest() {
     }
 
     @Test
-    fun testContextMenuVisibleAfterLongPress() {
-        mPresenter.onProductLongClicked(0)
-        verify(mView).showActionMenu()
-    }
-
-    @Test
     fun testViewRefreshWithActiveList() {
         prepareActiveListView()
         verify(mView).refreshList()
