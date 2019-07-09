@@ -13,3 +13,5 @@ jdk:
 script:
   - ./gradlew test
   - ./gradlew assembleDebug
+notifications:
+  email: false
