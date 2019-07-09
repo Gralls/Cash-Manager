@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Shopping List</string>
+    <string name="app_name">Cash Manager</string>
     <string name="create_new_list_title">Create new list</string>
     <string name="edit_list_title">Edit list</string>
     <string name="confirm_create_new_list">Create</string>
