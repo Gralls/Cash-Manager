@@ -1,4 +1,4 @@
-# Shopping-Lists
+# Shopping-Lists [![Build Status](https://travis-ci.com/Gralls/Shopping-Lists.svg?branch=master)](https://travis-ci.com/Gralls/Shopping-Lists)
 Open source Android application in which you can create and manage your shopping lists. After you found something from list you can mark it as bought.
 
 # App Screenshots
