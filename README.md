@@ -1,7 +1,10 @@
 # Shopping-Lists
+Open source Android application in which you can create and manage your shopping lists. After you found something from list you can mark it as bought.
 
-![active_list_details](https://user-images.githubusercontent.com/9137093/60395199-46331880-9b30-11e9-9e29-c09d0016f9e6.png?s=200)
-![active_list](https://user-images.githubusercontent.com/9137093/60395200-46331880-9b30-11e9-9f5a-4ce0fd9da82c.png)
-![adding_new_product](https://user-images.githubusercontent.com/9137093/60395201-46cbaf00-9b30-11e9-9f62-28b38cb8ee03.png)
-![archived_list](https://user-images.githubusercontent.com/9137093/60395202-46cbaf00-9b30-11e9-8fb3-9587841b21ec.png)
-![create_new_list](https://user-images.githubusercontent.com/9137093/60395203-46cbaf00-9b30-11e9-98af-3b6302a51e3a.png)
+# App Screenshots
+![active_list](https://github.com/Gralls/Shopping-Lists/blob/readme/Screenshots/active_list.png)
+![archived_list](https://github.com/Gralls/Shopping-Lists/blob/readme/Screenshots/archived_list.png)
+![active_list_details](https://github.com/Gralls/Shopping-Lists/blob/readme/Screenshots/active_list_details.png)
+
+# License
+MIT
