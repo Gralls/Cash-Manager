@@ -7,7 +7,8 @@ android:
     - build-tools-28.0.3
     - android-28
 before_install:
-  - yes | sdkmanager "platforms;android-28"
+    - openssl aes-256-cbc -K $encrypted_c5385d812c08_key -iv $encrypted_c5385d812c08_iv -in google-services.json.enc -out google-services.json -d
+    - yes | sdkmanager "platforms;android-28"
 jdk:
   - oraclejdk8
 script:
