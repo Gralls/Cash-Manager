@@ -27,14 +27,12 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_create_list_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginTop="@dimen/margin_normal"
-        android:background="@drawable/submit_button_background"
         android:text="@string/create_confirmation"
-        android:textAllCaps="false"
-        android:textColor="@android:color/white" />
+        android:textAllCaps="false" />
 </LinearLayout>

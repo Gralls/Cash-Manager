@@ -9,7 +9,7 @@ buildscript {
         versionCode = 1
         versionName = "0.1"
 
-        gradle_plugin_version = '3.4.1'
+        gradle_plugin_version = '3.4.2'
 
         //kotlin
         kotlin_version = '1.3.41'
@@ -40,6 +40,7 @@ buildscript {
         //Firebase
         google_services_version = '4.2.0'
         firebase_version = '17.0.0'
+        firebase_auth_version = '18.0.0'
     }
 
 

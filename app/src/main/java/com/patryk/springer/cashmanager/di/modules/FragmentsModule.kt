@@ -3,6 +3,8 @@ package com.patryk.springer.cashmanager.di.modules
 import com.patryk.springer.cashmanager.di.scopes.FragmentScope
 import com.patryk.springer.cashmanager.view.listdetails.ListDetailsFragment
 import com.patryk.springer.cashmanager.view.listdetails.ListDetailsModule
+import com.patryk.springer.cashmanager.view.login.LoginFragment
+import com.patryk.springer.cashmanager.view.login.LoginModule
 import com.patryk.springer.cashmanager.view.main.MainFragment
 import com.patryk.springer.cashmanager.view.main.MainModule
 import com.patryk.springer.cashmanager.view.shoppinglists.activelists.ActiveListsFragment
@@ -34,4 +36,8 @@ abstract class FragmentsModule {
     @FragmentScope
     @ContributesAndroidInjector(modules = [ListDetailsModule::class])
     internal abstract fun listDetailsFragment(): ListDetailsFragment
+
+    @FragmentScope
+    @ContributesAndroidInjector(modules = [LoginModule::class])
+    internal abstract fun loginFragment(): LoginFragment
 }

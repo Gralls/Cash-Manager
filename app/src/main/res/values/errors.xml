@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_empty_field">Required field</string>
+    <string name="error_invalid_email">Invalid E-mail</string>
+    <string name="error_auth_wrong_credentials">Invalid user credentials</string>
+</resources>
