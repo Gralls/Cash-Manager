@@ -14,7 +14,15 @@ import javax.inject.Singleton
  */
 @Singleton
 @Component(
-    modules = [ApplicationModule::class, AndroidSupportInjectionModule::class, FragmentsModule::class, ActivitiesModule::class, DatabaseModule::class, ShoppingListsRepoModule::class]
+    modules = arrayOf(
+        ApplicationModule::class,
+        AndroidSupportInjectionModule::class,
+        FragmentsModule::class,
+        ActivitiesModule::class,
+        FirebaseModule::class,
+        DatabaseModule::class,
+        ShoppingListsRepoModule::class
+    )
 )
 interface ApplicationComponent : AndroidInjector<DaggerApplication> {
 

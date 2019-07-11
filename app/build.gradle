@@ -47,6 +47,7 @@ dependencies {
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     //Firebase
     implementation "com.google.firebase:firebase-core:$firebase_version"
+    implementation "com.google.firebase:firebase-auth:$firebase_auth_version"
 
     //Room
     implementation "android.arch.persistence.room:runtime:$room_version"
